@@ -73,7 +73,7 @@ export function Header() {
 
       {/* Mobile Menu (Visible when isMenuOpen is true) */}
       {isMenuOpen && (
-        <div className="absolute top-0 left-0 w-full h-screen bg-black text-white flex flex-col items-center justify-center space-y-10 py-12 md:hidden z-50 pb-50">
+        <div className="absolute top-0 left-0 w-full h-dvh bg-black text-white flex flex-col items-center justify-center space-y-10 py-12 md:hidden z-50 pb-50">
           <div className="absolute top-6 right-6">
             <button
               className="text-white"
