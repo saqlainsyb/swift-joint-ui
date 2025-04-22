@@ -1,0 +1,97 @@
+import { cn } from "@/lib/utils"; // Utility to merge tailwind classes
+import Link from "next/link";
+import Image from "next/image"; // Importing Next.js Image component
+
+export function Footer() {
+  return (
+    <footer
+      className={cn("bg-black text-white py-12 px-6 md:px-30")}
+      aria-labelledby="footer"
+    >
+      <div className="flex flex-col md:flex-row justify-between items-start space-x-12 space-y-10 ml-5 md:ml-0">
+        <div className="space-y-6">
+          <h3 className="text-sm">Support</h3>
+          <h3 className="text-3xl font-semibold">Swift Joint</h3>
+          <h3 className="text-3xl font-semibold">App</h3>
+          <h3 className="text-3xl font-semibold">Learn</h3>
+          <div className="space-y-2">
+            <Link
+              href="#support"
+              className="text-sm text-muted-foreground hover:text-blue-500 block"
+            >
+              FAQs
+            </Link>
+            <Link
+              href="#about-sable"
+              className="text-sm text-muted-foreground hover:text-blue-500 block"
+            >
+              About Sable
+            </Link>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <h3 className="text-3xl font-semibold">Contact</h3>
+          <p className="text-sm">
+            <span className="font-semibold">Email: </span>info@swiftjoint.com
+          </p>
+          <p className="text-sm">
+            <span className="font-semibold">Location: </span>Bengaluru,
+            Karnataka
+          </p>
+        </div>
+
+        <Image
+          src="/logo.svg"
+          alt="Swift Joint Logo"
+          width={180}
+          height={180}
+        />
+      </div>
+      <hr className="my-8 border-t border-[#2F2F2F]" />
+      <div>
+        <p className="text-sm text-muted-foreground">
+          Privacy Policy | Terms and Conditions
+        </p>
+        <p className="text-sm text-muted-foreground mt-4">
+          This Privacy Policy explains how Swift Joint collects, uses, and
+          shares information when you use our mobile application (&quot;App&quot;) and
+          electrofusion machine (&quot;Product&quot;). We collect information you provide
+          when using our Services, such as account details and payment
+          information. We also gather usage data and device information
+          automatically. We use your information to deliver and improve our
+          Services, process transactions, and communicate with you. We may share
+          your information with service providers and business partners as
+          necessary. You can update your information and preferences through our
+          Services. If you have questions or concerns, please contact us at
+          [Contact Information].
+        </p>
+        <div className="mt-4 ml-4">
+          <p className="text-sm text-muted-foreground">
+            Please see{" "}
+            <Link
+              href="https://www.swiftjoint.com/terms-and-conditions"
+              className="text-blue-500 hover:text-blue-700"
+            >
+              www.swiftjoint.com/terms-and-conditions
+            </Link>{" "}
+            for terms and conditions. Some exclusions apply.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Please see{" "}
+            <Link
+              href="https://www.swiftjoint.com/terms-and-conditions"
+              className="text-blue-500 hover:text-blue-700"
+            >
+              www.swiftjoint.com/terms-and-conditions
+            </Link>{" "}
+            for terms and conditions.
+          </p>
+          <p className="text-sm text-muted-foreground">Swift Joint estimated annual value</p>
+          <p className="text-sm text-muted-foreground">Swift Joint product comparisons</p>
+        </div>
+        <p className="text-sm text-muted-foreground mt-4">† SWIFT JOINT</p>
+      </div>
+    </footer>
+  );
+}
