@@ -31,7 +31,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "flex justify-between items-center py-6 px-8 md:px-30",
+        "flex justify-between items-center py-6 px-8 md:px-30 sticky top-0 z-50",
         "bg-black text-white shadow-lg"
       )}
       aria-labelledby="header"
