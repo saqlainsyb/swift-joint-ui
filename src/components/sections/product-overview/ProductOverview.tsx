@@ -20,21 +20,21 @@ export const ProductOverview = ({
   buttonLabel,
   comingSoon = false,
 }: ProductOverviewProps) => (
-  <div className="flex flex-col md:flex-row-reverse items-center justify-center">
+  <div className="flex flex-col sm:flex-row-reverse items-center justify-center">
     <Image
       src={imageSrc}
       alt={title}
-      width={900}
-      height={900}
-      className="bg-transparent h-full w-auto ml-[-70px] md:ml-0 mt-10 md:mt-0"
+      width={400}
+      height={400}
+      className="bg-transparent h-full ml-[-70px] md:ml-0 mt-10 md:mt-0 w-200 lg:w-300 lg:mr-20"
     />
-    <div className="text-white max-w-lg z-50 mt-10 my-16">
-      <h3 className="text-md md:text-2xl font-bold leading-5">SWIFT JOINT</h3>
-      <h3 className="text-xl md:text-6xl font-extrabold whitespace-nowrap">
+    <div className="text-white max-w-lg z-50 mt-10 my-16 lg:ml-20">
+      <h3 className="text-md lg:text-2xl font-bold leading-5">SWIFT JOINT</h3>
+      <h3 className="text-xl lg:text-6xl font-extrabold whitespace-nowrap">
         {title}
       </h3>
       {savings && (
-        <p className="text-orange-500 text-lg md:text-3xl font-bold">
+        <p className="text-orange-500 text-lg lg:text-3xl font-bold">
           Saves More Than<br/>{savings}
         </p>
       )}

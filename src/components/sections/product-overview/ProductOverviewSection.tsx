@@ -7,7 +7,7 @@ export default function ProductOverviewSection() {
       {productsData.map((product, index) => (
         <div
           key={index}
-          className={`px-8 md:px-30 border-t border-[#2F2F2F]`}
+          className={`px-8 lg:px-30 border-t border-[#2F2F2F]`}
         >
           <ProductOverview {...product} />
         </div>
