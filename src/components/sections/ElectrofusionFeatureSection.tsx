@@ -45,7 +45,7 @@ export default function ElectrofusionFeatureSection() {
             withstand extreme conditions, making every joint stronger.
           </p>
         </div>
-        <div className="relative flex gap-2 flex-col md:flex-row space-y-4 w-full md:w-auto justify-stretch">
+        <div className="relative flex gap-2 flex-col md:flex-row w-full md:w-auto justify-stretch">
           {/* <div className="bg-gray-100 absolute inset-0 rounded-xl -translate-y-5 translate-x-5" /> */}
             <Image
                 src="/images/products/electrofusion-climate-3.png"
@@ -54,7 +54,7 @@ export default function ElectrofusionFeatureSection() {
                 height={350}
                 className="rounded-xl shadow-lg relative z-10 h-full w-full md:w-auto"
             />
-            <div className="flex flex-col gap-2 space-y-4 ">
+            <div className="flex flex-col gap-2">
             <Image
                 src="/images/products/electrofusion-climate-1.png"
                 alt="Electrofusion Machine"
