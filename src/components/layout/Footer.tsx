@@ -1,8 +1,8 @@
-import { cn } from "@/lib/utils"; // Utility to merge tailwind classes
+import { cn } from "@/lib/utils";
 import Link from "next/link";
-import Image from "next/image"; // Importing Next.js Image component
+import Image from "next/image";
 
-export function Footer() {
+export default function Footer() {
   return (
     <footer
       className={cn("bg-black text-white py-12 px-6 md:px-30")}

@@ -3,10 +3,9 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react"; // Import the Menu and X icons from Lucide
+import { Menu, X } from "lucide-react";
 
-export function Header() {
-  // State to manage the menu toggle
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Function to toggle the menu visibility
@@ -17,9 +16,9 @@ export function Header() {
   // Disable scroll when the menu is open
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.style.overflow = "hidden"; // Disable scroll
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"; // Enable scroll
+      document.body.style.overflow = "auto";
     }
 
     // Clean up the effect when the component is unmounted or menu is closed
@@ -31,7 +30,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "flex justify-between items-center py-6 px-8 md:px-30 sticky top-0 z-50",
+        "flex justify-between items-center py-6 px-8 md:px-30 sticky top-0 z-100",
         "bg-black text-white shadow-lg"
       )}
       aria-labelledby="header"

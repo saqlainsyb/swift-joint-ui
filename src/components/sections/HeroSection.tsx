@@ -1,8 +1,8 @@
 "use client";
-import { Button } from "@/components/ui/button"; // Importing ShadCN Button
-import { Search } from "lucide-react"; // Importing Lucide's Search icon
+import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
 
-export function HeroSection() {
+export default function HeroSection() {
   return (
     <section
       className="relative w-full h-[calc(100vh-83.7344px)] bg-cover bg-center"
@@ -32,9 +32,9 @@ export function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              className="absolute right-2 rounded-full bg-orange-500 text-white hover:bg-orange-600 border-0 h-[80%]"
+              className="absolute right-2 rounded-full bg-orange-500 text-white hover:bg-orange-600 border-0 h-[80%] cursor-pointer"
             >
-              <Search size={20} />
+              <Search size={20} color="white"/>
             </Button>
           </div>
         </div>
