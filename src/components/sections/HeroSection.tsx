@@ -5,7 +5,7 @@ import { Search } from "lucide-react";
 export default function HeroSection() {
   return (
     <section
-      className="relative w-full h-[calc(100vh-83.7344px)] bg-cover bg-center"
+      className="relative w-full h-[calc(100dvh-83.7344px)] bg-cover bg-center"
       style={{ backgroundImage: "url('/images/hero-bg.png')" }}
     >
       <div className="absolute inset-0 bg-black opacity-70"></div>
