@@ -1,13 +1,12 @@
 interface ProductDescriptionProps {
     title: string;
-    description: string;
   }
   
-  export default function ProductDescription({ title, description }: ProductDescriptionProps) {
+  export default function ProductDescription({ title }: ProductDescriptionProps) {
     return (
-      <section className="bg-[#2F2F2F] text-white px-8 lg:px-30 py-12 text-center">
-        <h2 className="text-4xl font-bold mb-6">{title}</h2>
-        <p className="max-w-3xl mx-auto text-lg">{description}</p>
+      <section className="text-white px-8 lg:px-30 py-12 text-center uppercase">
+        <h2 className="text-5xl font-semibold">Swift Joint</h2>
+        <span className="text-xl font-semibold leading-8">{title}</span>
       </section>
     );
   }

@@ -1,26 +1,32 @@
 export interface ProductDetail {
-    slug: string;
-    title: string;
-    heroImage: string;
-    highlights: Array<{ label: string; value: string }>;
-    description: string;
-    specsImage: string;
-    comparisonImage?: string;
-    portabilityImage?: string;
-    referenceImage?: string;
-    weight?: string;
-  }
+  slug: string;
+  title: string;
+  heroImage: string;
+  highlights?: Array<{ label?: string; value: string; icon?: string }>;
+  description: string;
+  specsImage: string;
+  comparisonImage?: string;
+  portabilityImage?: string;
+  referenceImage?: string;
+  weight?: string;
+}
 
 export const productDetails: ProductDetail[] = [
   {
     slug: "model1",
-    title: "Swift Joint Model 1",
+    title: "Model 1",
     heroImage: "/images/products/model1-hero.png",
     highlights: [
       { label: "Smaller", value: "60%" },
       { label: "Lighter", value: "85%" },
-      { label: "Works In", value: "Harsh Environment" },
-      { label: "No Size", value: "Limitations" },
+      {
+        value: "Works In Harsh Environment",
+        icon: "/images/harsh-environment.svg",
+      },
+      {
+        value: "No Size Limitations",
+        icon: "/images/fittingsize.svg",
+      },
     ],
     description:
       "Designed for agility and efficiency, the Swift Joint Model 1 weighs just 8 KG...",
@@ -31,13 +37,21 @@ export const productDetails: ProductDetail[] = [
   },
   {
     slug: "lite1",
-    title: "Swift Joint Lite 1",
+    title: "Lite 1",
     heroImage: "/images/products/lite1-hero.png",
     highlights: [
       { label: "Smaller", value: "60%" },
       { label: "Lighter", value: "85%" },
-      { label: "Works In", value: "Harsh Environment" },
-      { label: "No Size", value: "Limitations" },
+      {
+        label: "Works In",
+        value: "Harsh Environment",
+        icon: "/images/harsh-environment.svg",
+      },
+      {
+        label: "No Size",
+        value: "Limitations",
+        icon: "/images/fittingsize.svg",
+      },
     ],
     description:
       "Compact and ultra-lightweight at just 5 KG, Swift Joint Lite 1 is designed...",
@@ -47,14 +61,8 @@ export const productDetails: ProductDetail[] = [
   },
   {
     slug: "portable-lite1",
-    title: "Swift Joint Portable Lite 1",
+    title: "Portable Lite 1",
     heroImage: "/images/products/portable-lite1-hero.png",
-    highlights: [
-      { label: "Smaller", value: "60%" },
-      { label: "Lighter", value: "85%" },
-      { label: "Works In", value: "Harsh Environment" },
-      { label: "No Size", value: "Limitations" },
-    ],
     description:
       "The Swift Joint Portable Lite 1 ensures faster deployment and efficiency...",
     specsImage: "/images/products/portable-lite1-specs.png",
@@ -65,14 +73,8 @@ export const productDetails: ProductDetail[] = [
   },
   {
     slug: "portable-pro-max",
-    title: "Swift Joint Portable Pro Max",
+    title: "Portable Pro Max",
     heroImage: "/images/products/portable-pro-max-hero.png",
-    highlights: [
-      { label: "Smaller", value: "60%" },
-      { label: "Lighter", value: "85%" },
-      { label: "Works In", value: "Harsh Environment" },
-      { label: "No Size", value: "Limitations" },
-    ],
     description:
       "Engineered for extreme durability and unmatched portability...",
     specsImage: "/images/products/portable-pro-max-specs.png",

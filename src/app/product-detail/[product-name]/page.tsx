@@ -26,7 +26,6 @@ export default function ProductDetailPage() {
 
       <ProductDescription
         title={product.title}
-        description={product.description}
       />
 
       <ProductSpecs imageSrc={product.specsImage} />
