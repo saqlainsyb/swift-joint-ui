@@ -89,7 +89,7 @@ export default function Header() {
           >
             Products
           </Link>
-          <Link href="#app" className="text-white hover:text-blue-500 text-2xl">
+          <Link href="/application" className="text-white hover:text-blue-500 text-2xl">
             App
           </Link>
           <Link
