@@ -52,7 +52,7 @@ export default function Header() {
         <Link href="#products" className="text-white hover:text-blue-500">
           Products
         </Link>
-        <Link href="#app" className="text-white hover:text-blue-500">
+        <Link href="/application" className="text-white hover:text-blue-500">
           App
         </Link>
         <Link href="#about-us" className="text-white hover:text-blue-500">
