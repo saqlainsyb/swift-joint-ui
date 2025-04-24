@@ -6,7 +6,13 @@ import ProductComparison from "@/components/product-detail/ProductComparison";
 import ProductPortability from "@/components/product-detail/ProductPortability";
 import ProductReference from "@/components/product-detail/ProductReference";
 
-export default function ProductDetailPage({ params }: { params: { 'product-name': string } }) {
+interface ProductDetailPageProps {
+  params: {
+    'product-name': string;
+  };
+}
+
+export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   const product = productDetails.find(p => p.slug === params["product-name"]);
 
   if (!product) return <div className="text-center py-20">Product not found.</div>;
