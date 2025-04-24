@@ -32,7 +32,7 @@ export default function HeroSection() {
             <Button
               variant="outline"
               size="lg"
-              className="absolute right-2 rounded-full bg-orange-500 text-white hover:bg-orange-600 border-0 h-[80%] cursor-pointer"
+              className="absolute right-2 rounded-full !bg-orange-500 text-white !hover:bg-orange-600 border-0 h-[80%] cursor-pointer"
             >
               <Search size={20} color="white"/>
             </Button>

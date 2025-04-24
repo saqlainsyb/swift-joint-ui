@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { MoveUpRight } from 'lucide-react';
 import React from "react";
+import Link from "next/link";
 
 interface ProductOverviewProps {
   title: string;
@@ -10,6 +11,7 @@ interface ProductOverviewProps {
   imageSrc: string;
   buttonLabel: string;
   comingSoon?: boolean;
+  slug?: string;
 }
 
 export const ProductOverview = ({
@@ -19,6 +21,7 @@ export const ProductOverview = ({
   imageSrc,
   buttonLabel,
   comingSoon = false,
+  slug
 }: ProductOverviewProps) => (
   <div className="flex flex-col sm:flex-row-reverse items-center justify-center">
     <Image
@@ -54,9 +57,11 @@ export const ProductOverview = ({
           : description}
       </p>
 
-      <Button variant="outline" size={"xl"} className="mt-4 text-orange-400 text-lg flex items-center cursor-pointer">
-        {buttonLabel}<MoveUpRight strokeWidth={3}/>
-      </Button>
+      { slug && <Link href={`/product-detail/${slug}`}>
+        <Button variant="outline" size={"xl"} className="mt-4 text-orange-400 text-lg flex items-center cursor-pointer">
+          {buttonLabel}<MoveUpRight strokeWidth={3}/>
+        </Button>
+      </Link>}
       {comingSoon && (
         <span className="inline-block uppercase text-[#E5841180] py-1 rounded-full mt-3 text-3xl font-bold">
           Launching Soon

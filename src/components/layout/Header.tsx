@@ -1,14 +1,26 @@
 "use client";
-import { cn } from "@/lib/utils";
+
+import * as React from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { productDetails } from "@/data/productDetails"; // Import product details
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent,
+  NavigationMenuLink,
+} from "@/components/ui/navigation-menu"; // Import relevant ShadCn components
+import { cn } from "@/lib/utils"; // Utility class for handling classes
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+
   // Function to toggle the menu visibility
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -29,15 +41,12 @@ export default function Header() {
   }, [isMenuOpen]);
 
   useEffect(() => {
-      setIsMenuOpen(false);
+    setIsMenuOpen(false);
   }, [pathname]);
 
   return (
     <header
-      className={cn(
-        "flex justify-between items-center py-6 px-8 md:px-30 sticky top-0 z-100",
-        "bg-black text-white shadow-lg"
-      )}
+      className="flex justify-between items-center py-6 px-8 md:px-30 sticky top-0 z-100 bg-black text-white shadow-lg"
       aria-labelledby="header"
     >
       {/* Logo Section */}
@@ -54,9 +63,30 @@ export default function Header() {
 
       {/* Navigation Links (Visible on medium screens and above) */}
       <nav className="hidden md:flex space-x-8 items-center">
-        <Link href="#products" className="text-white hover:text-blue-500">
-          Products
-        </Link>
+        {/* Products Dropdown Menu */}
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger className="text-white">
+                Products
+              </NavigationMenuTrigger>
+              <NavigationMenuContent className="bg-[#121212] text-white rounded-lg shadow-lg">
+                <ul className="grid gap-2 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  {productDetails.map((product) => (
+                    <ListItem
+                      key={product.slug}
+                      title={product.title}
+                      href={`/product-detail/${product.slug}`}
+                    >
+                      {product.description.slice(0, 150)}...
+                    </ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+
         <Link href="/application" className="text-white hover:text-blue-500">
           App
         </Link>
@@ -69,10 +99,38 @@ export default function Header() {
       </nav>
 
       {/* Hamburger Icon (Visible on small screens) */}
-      <div className="md:hidden flex items-center" onClick={toggleMenu}>
-        <button aria-label="Toggle Menu" className="text-white">
-          <Menu size={25} /> {/* Use the Menu icon from Lucide */}
-        </button>
+      <div className="md:hidden flex items-center">
+        {/* Products Menu for small screens */}
+        <div className="text-white">
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+                <NavigationMenuContent className="bg-[#121212] text-white rounded-lg shadow-lg">
+                  <ul className="w-40">
+                    {productDetails.map((product) => (
+                      <ListItem
+                        key={product.slug}
+                        title={product.title}
+                        href={`/product-detail/${product.slug}`}
+                      ></ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+      </div>
+
+      <div className="md:hidden">
+      <button
+        aria-label="Toggle Menu"
+        className="text-white"
+        onClick={toggleMenu}
+      >
+        <Menu size={25} />
+      </button>
       </div>
 
       {/* Mobile Menu (Visible when isMenuOpen is true) */}
@@ -84,17 +142,13 @@ export default function Header() {
               onClick={toggleMenu}
               aria-label="Close Menu"
             >
-              <X size={25} /> {/* Close icon from Lucide */}
+              <X size={25} />
             </button>
           </div>
-          
-            <Link
-            href="#products"
+          <Link
+            href="/application"
             className="text-white hover:text-blue-500 text-2xl"
           >
-            Products
-          </Link>
-          <Link href="/application" className="text-white hover:text-blue-500 text-2xl">
             App
           </Link>
           <Link
@@ -117,7 +171,6 @@ export default function Header() {
               height={35}
             />
           </Link>
-       
         </div>
       )}
 
@@ -130,3 +183,30 @@ export default function Header() {
     </header>
   );
 }
+
+// ListItem component for rendering each product in the dropdown menu
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  );
+});
+ListItem.displayName = "ListItem";
