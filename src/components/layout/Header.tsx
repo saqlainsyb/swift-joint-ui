@@ -93,7 +93,7 @@ export default function Header() {
         <Link href="#about-us" className="text-white hover:text-blue-500">
           About Us
         </Link>
-        <Link href="#contact" className="text-white hover:text-blue-500">
+        <Link href="#contact-us" className="text-white hover:text-blue-500">
           Contact
         </Link>
       </nav>
@@ -158,7 +158,7 @@ export default function Header() {
             About Us
           </Link>
           <Link
-            href="#contact"
+            href="#contact-us"
             className="text-white hover:text-blue-500 text-2xl"
           >
             Contact
