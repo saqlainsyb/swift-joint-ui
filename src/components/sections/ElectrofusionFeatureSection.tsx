@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ElectrofusionFeatureSection() {
   return (
-    <section className="px-8 lg:px-30 py-16 space-y-20 bg-white">
+    <section className="px-8 lg:px-30 py-16 space-y-20 bg-white text-accent">
       <div className="flex flex-col lg:flex-row items-center lg:justify-center gap-12 lg:gap-20 lg:space-x-10">
         <div className="relative">
           <div className="bg-gray-100 absolute inset-0 rounded-xl -translate-y-5 translate-x-5" />
@@ -30,7 +30,7 @@ export default function ElectrofusionFeatureSection() {
         </div>
       </div>
 
-      <div className="flex flex-col-reverse lg:flex-row items-center lg:justify-center gap-12 lg:gap-10 lg:space-x-10 ">
+      <div className="flex flex-col-reverse lg:flex-row items-center lg:justify-center gap-12 lg:gap-10 lg:space-x-10">
         {/* Text Content */}
         <div className="flex flex-col justify-center md:max-w-lg flex-1">
           <h2 className="text-3xl font-bold mb-4">
