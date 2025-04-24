@@ -1,3 +1,6 @@
+'use client';
+
+import { useParams } from 'next/navigation';
 import { productDetails } from "@/data/productDetails";
 import ProductHero from "@/components/product-detail/ProductHero";
 import ProductDescription from "@/components/product-detail/ProductDescription";
@@ -6,14 +9,11 @@ import ProductComparison from "@/components/product-detail/ProductComparison";
 import ProductPortability from "@/components/product-detail/ProductPortability";
 import ProductReference from "@/components/product-detail/ProductReference";
 
-interface ProductDetailPageProps {
-  params: {
-    'product-name': string;
-  };
-}
+export default function ProductDetailPage() {
+  const params = useParams<{ 'product-name': string }>();
+  const productSlug = params['product-name'];
 
-export default function ProductDetailPage({ params }: ProductDetailPageProps) {
-  const product = productDetails.find(p => p.slug === params["product-name"]);
+  const product = productDetails.find(p => p.slug === productSlug);
 
   if (!product) return <div className="text-center py-20">Product not found.</div>;
 
