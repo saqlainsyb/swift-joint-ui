@@ -2,6 +2,7 @@ export interface ProductDetail {
   slug: string;
   title: string;
   heroImage: string;
+  mHeroImage: string;
   highlights?: Array<{ label?: string; value: string; icon?: string }>;
   description: string;
   specsImage: string;
@@ -16,6 +17,7 @@ export const productDetails: ProductDetail[] = [
     slug: "model1",
     title: "Model 1",
     heroImage: "/images/products/model1-hero.png",
+    mHeroImage: "/images/products/m-model1-hero.png",
     highlights: [
       { label: "Smaller", value: "60%" },
       { label: "Lighter", value: "85%" },
@@ -39,6 +41,7 @@ export const productDetails: ProductDetail[] = [
     slug: "lite1",
     title: "Lite 1",
     heroImage: "/images/products/lite1-hero.png",
+    mHeroImage: "/images/products/m-lite1-hero.png",
     highlights: [
       { label: "Smaller", value: "60%" },
       { label: "Lighter", value: "85%" },
@@ -63,6 +66,7 @@ export const productDetails: ProductDetail[] = [
     slug: "portable-lite1",
     title: "Portable Lite 1",
     heroImage: "/images/products/portable-lite1-hero.png",
+    mHeroImage: "",
     description:
       "The Swift Joint Portable Lite 1 ensures faster deployment and efficiency...",
     specsImage: "/images/products/portable-lite1-specs.png",
@@ -75,6 +79,7 @@ export const productDetails: ProductDetail[] = [
     slug: "portable-pro-max",
     title: "Portable Pro Max",
     heroImage: "/images/products/portable-pro-max-hero.png",
+    mHeroImage: "",
     description:
       "Engineered for extreme durability and unmatched portability...",
     specsImage: "/images/products/portable-pro-max-specs.png",

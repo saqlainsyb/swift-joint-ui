@@ -30,7 +30,9 @@ export default async function ProductDetailPage({ params }: Props) {
   return (
     <main>
       <ProductHero
+        slug={productName}
         imageSrc={product.heroImage}
+        mImageSrc={product.mHeroImage}
         highlights={product.highlights}
       />
 
