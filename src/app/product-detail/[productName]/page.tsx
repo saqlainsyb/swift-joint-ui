@@ -40,14 +40,14 @@ export default async function ProductDetailPage({ params }: Props) {
         title={product.title}
       />
 
-      <ProductSpecs imageSrc={product.specsImage} />
+      {product.specsImage && <ProductSpecs imageSrc={product.specsImage} />}
 
       {product.comparisonImage && (
         <ProductComparison imageSrc={product.comparisonImage} />
       )}
 
-      {product.portabilityImage && (
-        <ProductPortability imageSrc={product.portabilityImage} />
+      {product.portability && (
+        <ProductPortability portability={product.portability} slug={productName} />
       )}
 
       {product.referenceImage && (
