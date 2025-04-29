@@ -94,7 +94,6 @@ export const productDetails: ProductDetail[] = [
       "The Swift Joint Portable Lite 1 ensures faster deployment and efficiency...",
     specsImage: "/images/products/portable-lite1-specs.png",
     comparisonImage: "/images/products/portable-lite1-comparison.png",
-    // portabilityImage: "/images/products/portable-lite1-portability.png",
     portability : {
       title: "15 KG      vs      >55 KG",
       image: "/images/products/portable-lite1-portability.png",
@@ -119,7 +118,6 @@ export const productDetails: ProductDetail[] = [
       "Engineered for extreme durability and unmatched portability...",
     specsImage: "/images/products/portable-pro-max-specs.png",
     comparisonImage: "/images/products/portable-pro-max-comparison.png",
-    // portabilityImage: "/images/products/portable-pro-max-portability.png",
     portability : {
       title: "35 KG      vs      >235 KG",
       image: "/images/products/portable-pro-max-portability.png",
