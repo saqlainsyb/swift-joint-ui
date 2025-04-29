@@ -16,7 +16,7 @@ export default function ProductPortability({
   portability,
 }: ProductPortabilityProps) {
   return (
-    <section className="bg-[#383838] px-8 lg:px-30 pt-16 flex flex-col justify-center items-center">
+    <section className="bg-[#383838] px-6 md:px-8 lg:px-30 pt-16 flex flex-col justify-center items-center">
       <h2 className="text-4xl font-bold whitespace-pre mb-10">
         {portability.title}
       </h2>
@@ -35,7 +35,7 @@ export default function ProductPortability({
         className="lg:hidden"
       />
       {slug !== "lite1" && (
-        <div className="lg:hidden flex gap-4 px-8 justify-between mt-10">
+        <div className="lg:hidden flex gap-4 justify-between mt-10 mb-10">
           <section className="flex-1/2">
             <h3 className="text-xl font-bold mb-2">
               {portability.section1?.title}
