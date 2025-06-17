@@ -21,6 +21,14 @@ export async function generateMetadata(
   }
 }
 
+export async function generateStaticParams() {
+  // Fetch all product slugs (productName) for the paths
+  const paths = productDetails.map(product => ({
+    productName: product.slug, // Each productName corresponds to a dynamic route
+  }));
+  return paths;
+}
+
 export default async function ProductDetailPage({ params }: Props) {
   const { productName } = await params;
   const product = productDetails.find(p => p.slug === productName);
