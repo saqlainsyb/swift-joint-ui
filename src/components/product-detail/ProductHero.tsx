@@ -17,7 +17,7 @@ export default function ProductHero({
     <section className="bg-[#383838] text-white  lg:px-30 py-16 flex flex-col items-center">
       {slug === "model1" && (
         <div>
-          <img
+          <Image
             src={imageSrc}
             alt="Product Image"
             width={500}

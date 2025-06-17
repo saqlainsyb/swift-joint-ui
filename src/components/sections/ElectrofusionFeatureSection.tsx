@@ -5,7 +5,7 @@ export default function ElectrofusionFeatureSection() {
     <section className="px-8 lg:px-30 py-16 space-y-20 text-white">
       <div className="flex flex-col lg:flex-row items-center lg:justify-center gap-12 lg:gap-20 lg:space-x-10">
         <div className="relative shadow-[0_60px_100px_-30px_rgba(255,183,76,0.4)] rounded-xl">
-          <Image
+          <img
             src="/images/products/electrofusion-machine.png"
             alt="Electrofusion Machine"
             width={600}
